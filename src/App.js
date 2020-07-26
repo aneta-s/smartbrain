@@ -3,6 +3,7 @@ import Particles from "react-particles-js";
 import Clarifai from "clarifai";
 import "./App.css";
 import Navigation from "./components/Navigation/Navigation";
+import SignIn from "./components/SignIn/SignIn";
 import FaceRecognition from "./components/FaceRecognition/FaceRecognition";
 import Logo from "./components/Logo/Logo";
 import ImageLinkForm from "./components/ImageLinkForm/ImageLinkForm";
@@ -31,6 +32,7 @@ class App extends Component {
       input: "",
       imageUrl: "",
       box: {},
+      route: "signin",
     };
   }
 
@@ -66,19 +68,31 @@ class App extends Component {
       )
       .catch((err) => console.log(err));
   };
+  onRouteChange = ()=> {
+   this.setState({route: 'home'}) 
+  }
+
 
   render() {
     return (
       <div className="App">
         <Particles className="Particles" params={particleOptions} />
-        <Navigation />
-        <Logo />
-        <Rank />
-        <ImageLinkForm
-          onInputChange={this.onInputChange}
-          onButtonSubmit={this.onButtonSubmit}
-        />
-        <FaceRecognition box={this.state.box} imageUrl={this.state.imageUrl} /> 
+        <Navigation onRouteChange={this.onRouteChange}/> 11. PASS IN TO NAVIGATION
+        {this.state.route === "signin" ? 
+          <SignIn onRouteChange={this.onRouteChange} /> :
+          <div>
+            <Logo />
+            <Rank />
+            <ImageLinkForm
+              onInputChange={this.onInputChange}
+              onButtonSubmit={this.onButtonSubmit}
+            />
+            <FaceRecognition
+              box={this.state.box}
+              imageUrl={this.state.imageUrl}
+            />
+          </div>
+        }
       </div>
     );
   }
