@@ -35,11 +35,12 @@ class App extends Component {
       imageUrl: "",
       box: {},
       route: "signin",
-      isSignedIn: false, 
+      isSignedIn: false
     };
   }
 
   displayFaceBox = (box) => {
+    //console.log(box);
     this.setState({ box: box });
   };
 
@@ -52,11 +53,11 @@ class App extends Component {
     return {
       leftCol: clarifaiFace.left_col * width,
       topRow: clarifaiFace.top_row * height,
-      rightCol: width - clarifaiFace.right_col * width,
+      rightCol: width - (clarifaiFace.right_col * width),
 
-      bottomRow: height - clarifaiFace.bottom_col * height,
-    };
-  };
+      bottomRow: height - (clarifaiFace.bottom_col * height),
+    }
+  }
 
   onInputChange = (event) => {
     this.setState({ input: event.target.value });
@@ -76,19 +77,20 @@ class App extends Component {
       this.setState({isSignedIn: false}) 
     } else if (route === 'home'){ 
       this.setState({isSignedIn: true}) 
-    } else {
-      this.setState({route: route}); 
     } 
+      this.setState({route: route}); 
+    
   }
 
 
   render() {
+    const {isSignedIn, box, imageUrl, route} =this.state;
     return (
       <div className="App">
         <Particles className="Particles" params={particleOptions} />
-        <Navigation isSignedIn={this.state.isSignedIn}onRouteChange={this.onRouteChange}/>
-        {this.state.route === "home" ? 
-        <div> 
+        <Navigation isSignedIn={isSignedIn} onRouteChange={this.onRouteChange}/>
+        {route === "home" 
+        ?  <div> 
             <Logo />
             <Rank />
             <ImageLinkForm
@@ -96,12 +98,12 @@ class App extends Component {
               onButtonSubmit={this.onButtonSubmit}
             />
             <FaceRecognition
-              box={this.state.box}
-              imageUrl={this.state.imageUrl}
+              box={box}
+              imageUrl={imageUrl}
             />
           </div>
           : ( 
-          this.state.route === "signin" 
+         route === "signin" 
           ? <SignIn onRouteChange={this.onRouteChange} /> 
           : <Register onRouteChange={this.onRouteChange} />
           )
