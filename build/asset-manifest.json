@@ -1,0 +1,26 @@
+{
+  "files": {
+    "main.css": "/recognition-app/static/css/main.7cba6051.chunk.css",
+    "main.js": "/recognition-app/static/js/main.9a55f178.chunk.js",
+    "main.js.map": "/recognition-app/static/js/main.9a55f178.chunk.js.map",
+    "runtime-main.js": "/recognition-app/static/js/runtime-main.ec335661.js",
+    "runtime-main.js.map": "/recognition-app/static/js/runtime-main.ec335661.js.map",
+    "static/css/2.3c03f26f.chunk.css": "/recognition-app/static/css/2.3c03f26f.chunk.css",
+    "static/js/2.7a6106ed.chunk.js": "/recognition-app/static/js/2.7a6106ed.chunk.js",
+    "static/js/2.7a6106ed.chunk.js.map": "/recognition-app/static/js/2.7a6106ed.chunk.js.map",
+    "index.html": "/recognition-app/index.html",
+    "precache-manifest.64baae488ad1b2a5d79866fe643887c1.js": "/recognition-app/precache-manifest.64baae488ad1b2a5d79866fe643887c1.js",
+    "service-worker.js": "/recognition-app/service-worker.js",
+    "static/css/2.3c03f26f.chunk.css.map": "/recognition-app/static/css/2.3c03f26f.chunk.css.map",
+    "static/css/main.7cba6051.chunk.css.map": "/recognition-app/static/css/main.7cba6051.chunk.css.map",
+    "static/js/2.7a6106ed.chunk.js.LICENSE.txt": "/recognition-app/static/js/2.7a6106ed.chunk.js.LICENSE.txt",
+    "static/media/brain.png": "/recognition-app/static/media/brain.76f28f4f.png"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.ec335661.js",
+    "static/css/2.3c03f26f.chunk.css",
+    "static/js/2.7a6106ed.chunk.js",
+    "static/css/main.7cba6051.chunk.css",
+    "static/js/main.9a55f178.chunk.js"
+  ]
+}

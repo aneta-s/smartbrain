@@ -54,8 +54,7 @@ class App extends Component {
       leftCol: clarifaiFace.left_col * width,
       topRow: clarifaiFace.top_row * height,
       rightCol: width - (clarifaiFace.right_col * width),
-
-      bottomRow: height - (clarifaiFace.bottom_col * height),
+      bottomRow: height - (clarifaiFace.bottom_row * height),
     }
   }
 
@@ -86,7 +85,7 @@ class App extends Component {
   render() {
     const {isSignedIn, box, imageUrl, route} =this.state;
     return (
-      <div className="App">
+      <div  className="App">
         <Particles className="Particles" params={particleOptions} />
         <Navigation isSignedIn={isSignedIn} onRouteChange={this.onRouteChange}/>
         {route === "home" 
@@ -106,9 +105,7 @@ class App extends Component {
          route === "signin" 
           ? <SignIn onRouteChange={this.onRouteChange} /> 
           : <Register onRouteChange={this.onRouteChange} />
-          )
-         //// <SignIn onRouteChange={this.onRouteChange} /> : 20. RENDER THE HOMESCREEN (MOVE THIS LINE OF CODE BOTTOM) 
-      
+          )      
         }
       </div>
     );
